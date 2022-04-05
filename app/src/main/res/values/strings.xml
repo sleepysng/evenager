@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Eventeger</string>
+
+    <string-array name="letters">
+        <item>Kantine</item>
+        <item>Douala</item>
+        <item>Hugos</item>
+        <item>Johnny Sins Party</item>
+        <item>Meme Party</item>
+        <item>Meme Party 2</item>
+        <item>Monte Party</item>
+        <item>Skrr Luciano</item>
+    </string-array>
+
+    <string-array name="locations_array">
+        <item>Ravensburg</item>
+        <item>Friedrichshafen</item>
+        <item>Bad Waldsee</item>
+        <item>Stuttgart</item>
+        <item>Ulm</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Ganz okay, Chef &amp; Türsteher sehr nett auch an Tagen wo es ab 21 Jahren ist.</item>
+        <item>Zurückgebliebene Leute und zu viele Drogen. Gefühlt sind überall Stolperfallen.</item>
+        <item>Mittlerweile leider geschlossen. Laut anderen ist es dort richtig cool gewesen.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut.</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut.</item>
+    </string-array>
+
+    <string name="dash">Startseite</string>
+    <string name="settings">Einstellungen</string>
+    <string name="profile">Profil</string>
+    <string name="logo">Logo</string>
+    <string name="login">Einloggen</string>
+    <string name="register">Registrieren</string>
+    <string name="username">Benutzername</string>
+
+    <string-array name="languages_array">
+        <item>Deutsch</item>
+        <item>Englisch</item>
+        <item>Spanisch</item>
+    </string-array>
+
+
+
+</resources>
