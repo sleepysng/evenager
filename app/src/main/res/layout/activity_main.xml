@@ -30,6 +30,7 @@
         android:id="@+id/home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,31 +43,25 @@
             android:background="#26304C">
 
             <TextView
-                android:id="@+id/textUsername1"
-                android:layout_width="154dp"
-                android:layout_height="47dp"
-                android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="36sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.544"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.04" />
-
-            <TextView
-                android:id="@+id/textHello"
-                android:layout_width="89dp"
-                android:layout_height="46dp"
-                android:layout_marginStart="16dp"
+                android:id="@+id/home_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="28dp"
+                android:fontFamily="sans-serif-light"
                 android:text="Hallo"
-                android:textColor="#000000"
-                android:textSize="36sp"
-                app:layout_constraintEnd_toStartOf="@+id/textUsername1"
-                app:layout_constraintHorizontal_bias="0.263"
+                android:textColor="#FFFFFF"
+                android:textSize="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/firtTopicView2"
+                android:layout_width="4dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/cornerviews"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,8 +79,27 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:background="#26304C" />
+
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textUsername1"
+                android:layout_width="121dp"
+                android:layout_height="48dp"
+                android:text="Ruphyyy
+"
+                android:textAlignment="viewStart"
+                android:textColor="#ffffff"
+                android:textSize="29dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.080"
+                app:layout_constraintStart_toEndOf="@+id/home_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.035" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -111,7 +125,6 @@
         android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,7 +144,7 @@
                 android:fontFamily="sans-serif-light"
                 android:text="Profil"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:textSize="26dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,39 +158,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <View
-                android:id="@+id/view"
-                android:layout_width="249dp"
-                android:layout_height="2dp"
-                android:layout_marginTop="200dp"
-                android:background="@android:color/darker_gray"
-                app:layout_constraintBottom_toTopOf="@+id/profilepicture"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.413"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
-
             <Button
                 android:id="@+id/changePassword"
                 android:layout_width="175dp"
                 android:layout_height="52dp"
+                android:layout_marginTop="32dp"
                 android:text="Passwort ändern"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textMail"
-                app:layout_constraintVertical_bias="0.185" />
+                app:layout_constraintTop_toBottomOf="@+id/textMail" />
 
             <ImageView
                 android:id="@+id/profilepicture"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="184dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="172dp"
                 android:contentDescription="Picture"
                 android:src="@drawable/profile_example"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.452"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"></ImageView>
 
@@ -185,11 +185,14 @@
                 android:id="@+id/textFullname"
                 android:layout_width="245dp"
                 android:layout_height="32dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="Fullname"
+                android:textColor="#ffffff"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.481"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/profilepicture" />
 
@@ -199,10 +202,12 @@
                 android:layout_height="32dp"
                 android:gravity="center"
                 android:text="Username"
+                android:textColor="#ffffff"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:drawableLeftCompat="@drawable/ic_person"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.434"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textFullname" />
 
@@ -212,10 +217,12 @@
                 android:layout_height="32dp"
                 android:gravity="center"
                 android:text="E-Mail"
+                android:textColor="#ffffff"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:drawableLeftCompat="@drawable/ic_email"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.434"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
 
@@ -229,6 +236,7 @@
                 android:textStyle="bold"
                 app:drawableLeftCompat="@drawable/ic_cake"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.434"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textUsername" />
 
@@ -246,11 +254,13 @@
         android:id="@+id/setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone">
+        android:visibility="gone"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="740dp">
+            android:layout_height="740dp"
+            android:background="#26304C">
 
             <Spinner
                 android:id="@+id/locationSpinner"
@@ -284,6 +294,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="60dp"
                 android:text="Standort"
+                android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/locationSpinner"
@@ -298,6 +309,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="108dp"
                 android:text="Sprache"
+                android:textColor="#ffffff"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/locationSpinner"
