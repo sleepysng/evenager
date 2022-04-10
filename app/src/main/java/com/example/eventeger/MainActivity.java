@@ -2,19 +2,33 @@ package com.example.eventeger;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
 
     CardView profile, settings, home, eventliste, evendetails;
     BottomNavigationView navi;
     TextView username_home,username_pr;
-    String s1[],s2[];
+    RecyclerView recyclerView;
+    String title[], image[];
+    private static final String url="" ; // TODO: url from se datenbank getting in
     int images[] = {};
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,4 +88,40 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void getProducts(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,url,
+                new Response.Listener<String>(){
+                    public void onResponse(String response){
+
+
+                        try {
+                            JSONArray array= new JSONArray (response);
+                            for(int i=0; i<array.length();i++){
+                                JSONObject objekt = array.getJSONObject(i);
+
+                                String title = objekt.getString("title");
+                                String image = objekt.getString("image");
+
+
+
+                            }
+                        }catch (Exception e){
+                        }
+
+                        MyAdapter ma = new MyAdapter(MainActivity.this, title,image);
+                        recyclerView.setAdapter(ma);
+
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+            }
+
+
+        } );
+    }
+
 }

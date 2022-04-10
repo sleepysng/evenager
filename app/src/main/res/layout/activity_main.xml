@@ -21,7 +21,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu_nav" />
+        app:menu="@menu/menu_nav"
+        />
 
 
     //home-----------------------home//
@@ -232,6 +233,7 @@
                 android:layout_height="32dp"
                 android:gravity="center"
                 android:text="Geburtstag"
+                android:textColor="#ffffff"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:drawableLeftCompat="@drawable/ic_cake"
