@@ -66,19 +66,21 @@ public class MainActivity extends AppCompatActivity {
 
                             break;
                         case R.id.nav_setting:
-                            home.setVisibility(View.INVISIBLE);
+                            home.setVisibility(View.GONE);
                            // evendetails.setVisibility(View.INVISIBLE);
-                            eventliste.setVisibility(View.INVISIBLE);
-                            profile.setVisibility(View.INVISIBLE);
+                            eventliste.setVisibility(View.GONE);
+                            profile.setVisibility(View.GONE);
                             settings.setVisibility(View.VISIBLE);
 
                             break;
                         case R.id.nav_profile:
+
                             home.setVisibility(View.INVISIBLE);
                            // evendetails.setVisibility(View.INVISIBLE);
                             eventliste.setVisibility(View.INVISIBLE);
                             profile.setVisibility(View.VISIBLE);
                             settings.setVisibility(View.INVISIBLE);
+
                     }
                     return false;
                 });
