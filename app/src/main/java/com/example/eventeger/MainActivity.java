@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -24,13 +25,13 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     CardView profile, settings, home, eventliste, evendetails;
-     BottomNavigationView navi;
+    BottomNavigationView navi;
     TextView username_home,username_pr;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
 
 
         username_home = findViewById(R.id.textUsername1);

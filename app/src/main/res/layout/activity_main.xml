@@ -66,6 +66,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/textUsername1"
+                android:layout_width="121dp"
+                android:layout_height="48dp"
+                android:text="Ruphyyy"
+                android:textAlignment="viewStart"
+                android:textColor="#ffffff"
+                android:textSize="29dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.080"
+                app:layout_constraintStart_toEndOf="@+id/home_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.035" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/eventList"
                 android:layout_width="411dp"
@@ -84,23 +100,6 @@
                     android:background="#26304C" />
 
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/textUsername1"
-                android:layout_width="121dp"
-                android:layout_height="48dp"
-                android:text="Ruphyyy
-"
-                android:textAlignment="viewStart"
-                android:textColor="#ffffff"
-                android:textSize="29dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.080"
-                app:layout_constraintStart_toEndOf="@+id/home_text"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.035" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -256,7 +255,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/setting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -269,21 +272,20 @@
                 android:layout_height="29dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/languageSpinner"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.986"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.909" />
+                app:layout_constraintVertical_bias="0.086" />
 
             <Spinner
                 android:id="@+id/languageSpinner"
                 android:layout_width="263dp"
                 android:layout_height="29dp"
-                android:layout_marginEnd="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.986"
+                app:layout_constraintHorizontal_bias="0.959"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.156" />
