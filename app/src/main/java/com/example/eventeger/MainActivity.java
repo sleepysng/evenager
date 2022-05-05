@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         eventliste = findViewById(R.id.eventList);
         navi = findViewById(R.id.bottom_nav);
 
-        username_home.setText("Ruphyy");
+       user();
 
         if(i==1) {
             a();
@@ -126,6 +126,17 @@ public void a(){
     eventliste.setVisibility(View.VISIBLE);
     settings.setVisibility(View.GONE);
     s();
+
+}
+
+public void user(){
+
+        if(nickname.equals("sleepy")){
+
+        }
+        else if(nickname.equals("rupphy")){
+
+        }
 
 }
 
