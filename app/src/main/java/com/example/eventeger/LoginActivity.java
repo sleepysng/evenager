@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private String pPassword, pUsername;
     public static String nickname;
     private TextView goregister;
-    private String URL ="http://95.156.227.28/login/login.php";
+    private String URL ="https://eventager.de/login/login.php";
     private Button loginbtn;
 
     @Override
@@ -71,10 +71,12 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     response = response.trim();
-                    if (response.equals("success")) {
+                    System.out.println(response);
+                    if (response.equals("1")) {
                         forwardMain();
                         nickname=pUsername;
-                    } else if(response.equals("failure")) {
+
+                    } else if(response.equals("0")) {
                         Toast.makeText(LoginActivity.this, "Invalid login!", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -86,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             }) {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
+
                     Map<String, String> data = new HashMap<>();
                     data.put("password", pPassword);
                     data.put("username", pUsername);

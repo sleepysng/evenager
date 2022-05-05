@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#26304C"
     tools:context=".LoginActivity">
 
     <TextView
@@ -33,29 +33,43 @@
         android:autofillHints="username"
         android:hint="@string/username"
         android:inputType="text"
-
+        android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+
         android:id="@+id/imageviwemann"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
+        android:layout_width="24dp"
+        android:layout_height="26dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.296"
         app:srcCompat="@drawable/ic_person"
+
         />
 
     <ImageView
+
         android:id="@+id/imageviewpas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_lock"
-        />
-    
+        android:layout_width="24dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.412"
+
+        app:srcCompat="@drawable/ic_lock" />
+
     <EditText
         android:id="@+id/password"
         android:layout_width="357dp"
