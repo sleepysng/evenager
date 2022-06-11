@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
         username_home = findViewById(R.id.textUsername1);
         username_pr = findViewById(R.id.textUsername);
         profile = findViewById(R.id.profile);
@@ -64,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
         // evendetails = findViewById(R.id.eventDetail);
         eventliste = findViewById(R.id.eventList);
         navi = findViewById(R.id.bottom_nav);
+        user();
 
-       user();
 
-        if(i==1) {
+
+
+        if (i == 1) {
             a();
         }
-
-
 
         navi.setOnNavigationItemSelectedListener
                 ((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
@@ -102,14 +103,15 @@ public class MainActivity extends AppCompatActivity {
                             settings.setVisibility(View.GONE);
 
 
+
                             break;
 
                     }
                     return false;
                 });
 
-
     }
+
 
 public void s (){
     recyclerView = findViewById(R.id.eventRecycler);

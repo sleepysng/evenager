@@ -4,6 +4,7 @@ package com.example.eventeger;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +16,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ProfileActivity extends AppCompatActivity {
 
     TextView username, fullname, email, birthday;
+
+    CardView profile, settings, home, eventliste, evendetails;
+    BottomNavigationView navi;
+    TextView username_home, username_pr;
+
     private static String nickname = LoginActivity.nickname;
     private ImageView imageViewUser;
 
@@ -24,6 +30,17 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        username_home = findViewById(R.id.textUsername1);
+        username_pr = findViewById(R.id.textUsername);
+        profile = findViewById(R.id.profile);
+        settings = findViewById(R.id.setting);
+        home = findViewById(R.id.home);
+        // evendetails = findViewById(R.id.eventDetail);
+        eventliste = findViewById(R.id.eventList);
+        navi = findViewById(R.id.bottom_nav);
+
+
 
         username = findViewById(R.id.textUsername);
         birthday = findViewById(R.id.textBirthday);
@@ -40,7 +57,6 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
-
         //try {
         // TODO: Username benutzen: URL url = new URL("http://ruphyy.de/user-imgs/user-" + nickname + ".png");
         //    URL url = new URL("http://ruphyy.de/user-imgs/user-leon.png");
@@ -52,7 +68,6 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     }
-
 
 
 }
