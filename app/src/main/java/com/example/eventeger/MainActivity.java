@@ -32,6 +32,7 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,31 +44,43 @@ public class MainActivity extends AppCompatActivity {
     TextView username_home, username_pr;
 
 
-    TextView username, fullname, email, birthday;
+    TextView username, fullname, email, birthday,;
     private static String nickname = LoginActivity.nickname;
     private ImageView imageViewUser;
 
+
+    String url = "https://eventager.de/userdata/view.php";
+
     RecyclerView recyclerView;
     String s1[], s2[];
-    int[] images = {R.drawable.logo_k,R.drawable.logo_d,R.drawable.logo_h,R.drawable.johnnysinsblancket,R.drawable.kekw,R.drawable.mcmahon,R.drawable.montebrille,R.drawable.re};
+    int[] images = {R.drawable.logo_k, R.drawable.logo_d, R.drawable.logo_h, R.drawable.johnnysinsblancket, R.drawable.kekw, R.drawable.mcmahon, R.drawable.montebrille, R.drawable.re};
     int i = 1;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-
+        //--------home------- //
         username_home = findViewById(R.id.textUsername1);
-        username_pr = findViewById(R.id.textUsername);
+
         profile = findViewById(R.id.profile);
         settings = findViewById(R.id.setting);
         home = findViewById(R.id.home);
         // evendetails = findViewById(R.id.eventDetail);
         eventliste = findViewById(R.id.eventList);
         navi = findViewById(R.id.bottom_nav);
-        user();
+        //--------home------- //
 
 
+        //--------profil------- //
+        username_pr = findViewById(R.id.textUsername);
+
+        birthday = findViewById(R.id.textBirthday);
+        email = findViewById(R.id.textMail);
+        fullname = findViewById(R.id.textFullname);
+        imageViewUser = findViewById(R.id.profilepicture);
+        //--------profil------- //
 
 
         if (i == 1) {
@@ -101,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                             eventliste.setVisibility(View.GONE);
                             profile.setVisibility(View.VISIBLE);
                             settings.setVisibility(View.GONE);
-
+                            user();
 
 
                             break;
@@ -113,36 +126,84 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-public void s (){
-    recyclerView = findViewById(R.id.eventRecycler);
-    s1 = getResources().getStringArray(R.array.letters);
-    s2 = getResources().getStringArray(R.array.description);
-    MyAdapter ma = new MyAdapter(this, s1, s2, images);
-    recyclerView.setAdapter(ma);
-    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-}
+    public void s() {
+        recyclerView = findViewById(R.id.eventRecycler);
+        s1 = getResources().getStringArray(R.array.letters);
+        s2 = getResources().getStringArray(R.array.description);
+        MyAdapter ma = new MyAdapter(this, s1, s2, images);
+        recyclerView.setAdapter(ma);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
 
-public void a(){
-    home.setVisibility(View.VISIBLE);
-    profile.setVisibility(View.GONE);
-    eventliste.setVisibility(View.VISIBLE);
-    settings.setVisibility(View.GONE);
-    s();
-
-}
-
-public void user(){
-
-        if(nickname.equals("sleepy")){
-
-        }
-        else if(nickname.equals("rupphy")){
-
-        }
-
-}
+    public void a() {
+        home.setVisibility(View.VISIBLE);
+        profile.setVisibility(View.GONE);
+        eventliste.setVisibility(View.VISIBLE);
+        settings.setVisibility(View.GONE);
+        s();
 
     }
+
+    public void user() {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(MainActivity.this, response.trim(), Toast.LENGTH_SHORT).show();
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        Toast.makeText(MainActivity.this, volleyError.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+
+        protected Map<String, String> getParams () throws AuthFailureError {
+
+            Map<String, String> params = new HashMap<>();
+            params.put("params", nickname);
+            return params;
+        }
+
+    };
+        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+        requestQueue.add(stringRequest);
+
+
+
+
+
+
+      private void showJSON(String response) {
+        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray result = jsonObject.getJSONArray(Config5.JSON_ARRAY);
+
+            for (int i = 0; i < result.length(); i++) {
+                JSONObject jo = result.getJSONObject(i);
+                String fullname1 = jo.getString(Config5.KEY_FULLNAME);
+                String birth1 = jo.getString(Config5.KEY_BIRTH);
+                String mail1 = jo.getString(Config5.KEY_MAIL);
+
+
+
+
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+
+
+
+}
+
 
 
 
