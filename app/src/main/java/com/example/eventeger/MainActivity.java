@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     TextView username_home, username_pr;
 
 
-    TextView username, fullname, email, birthday,;
+    TextView username, fullname, email, birthday;
     private static String nickname = LoginActivity.nickname;
     private ImageView imageViewUser;
 
@@ -159,16 +159,16 @@ public class MainActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
                         Toast.makeText(MainActivity.this, volleyError.toString(), Toast.LENGTH_SHORT).show();
                     }
-                }){
+                }) {
 
-        protected Map<String, String> getParams () throws AuthFailureError {
+            protected Map<String, String> getParams() throws AuthFailureError {
 
-            Map<String, String> params = new HashMap<>();
-            params.put("params", nickname);
-            return params;
-        }
+                Map<String, String> params = new HashMap<>();
+                params.put("params", nickname);
+                return params;
+            }
 
-    };
+        };
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
         requestQueue.add(stringRequest);
 
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-      private void showJSON(String response) {
+   /*   private void showJSON(String response) {
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         try {
             JSONObject jsonObject = new JSONObject(response);
@@ -200,9 +200,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+*/
 
-
+    }
 }
+
 
 
 
