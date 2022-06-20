@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="#30ffffff"
+
         android:drawableLeft="@drawable/ic_profile"
         android:drawablePadding="20dp"
         android:inputType="textPersonName"
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:background="#30ffffff"
+
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="20dp"
         android:hint="E-Mail"
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:background="#30ffffff"
+
         android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="20dp"
         android:hint="Vor- und Nachname"
@@ -76,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:background="#30ffffff"
+
         android:drawableLeft="@drawable/ic_cake"
         android:drawablePadding="20dp"
         android:hint="Geburtstag"
@@ -92,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:background="#30ffffff"
+
         android:drawableLeft="@drawable/ic_lock"
         android:drawablePadding="20dp"
         android:hint="Passwort"
@@ -109,7 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:background="#30ffffff"
+
         android:drawableLeft="@drawable/ic_lock"
         android:drawablePadding="20dp"
         android:hint="Passwort bestätigen"
