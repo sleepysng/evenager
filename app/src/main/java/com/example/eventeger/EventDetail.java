@@ -16,19 +16,19 @@ public class EventDetail extends AppCompatActivity {
     String s1, s2;
     int myImage;
 
+    // TODO: Fix Error
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
 
-        mainImageView = findViewById(R.id.eventImage);
+        mainImageView = findViewById(R.id.eventKind);
         title = findViewById(R.id.eventTopic);
         description = findViewById(R.id.eventDescp);
 
         getData();
         setData();
-
-
     }
 
     private void getData() {
@@ -38,19 +38,15 @@ public class EventDetail extends AppCompatActivity {
             s2 = getIntent().getStringExtra("s2");
             myImage = getIntent().getIntExtra("myImage", 1);
 
+        } else {
+            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+        }
 
-
-    }else
-
-    {
-        Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
     }
 
-}
-
-    private void setData(){
-title.setText(s1);
-description.setText(s2);
+    private void setData() {
+        title.setText(s1);
+        description.setText(s2);
         mainImageView.setImageResource(myImage);
     }
 
