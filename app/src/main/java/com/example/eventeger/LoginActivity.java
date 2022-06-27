@@ -64,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         pPassword = password.getText().toString().trim();
         pUsername = username.getText().toString().trim();
 
-
         // TODO: Testen ob " " funktioniert..
         if (!pPassword.equals("") || !pUsername.equals("")) {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
@@ -74,8 +73,10 @@ public class LoginActivity extends AppCompatActivity {
                     System.out.println(response);
                     if (response.equals("1")) {
                         forwardMain();
-                        nickname=pUsername;
-
+                        nickname = pUsername;
+                    } else if(response.equals("2")) {
+                        forwardMain();
+                        nickname = pUsername;
                     } else if(response.equals("0")) {
                         Toast.makeText(LoginActivity.this, "Invalid login!", Toast.LENGTH_SHORT).show();
                     }

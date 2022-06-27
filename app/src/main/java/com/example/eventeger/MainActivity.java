@@ -29,7 +29,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
-
 import org.json.JSONException;
 
 import java.util.ArrayList;
@@ -43,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navi;
     TextView username_home, username_pr;
 
-
     TextView username, fullname, email, birthday;
-    private static String nickname = LoginActivity.nickname;
+    private String nickname = LoginActivity.nickname;
     private ImageView imageViewUser;
 
 
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     String s1[], s2[];
-    int[] images = {R.drawable.logo_k, R.drawable.logo_d, R.drawable.logo_h, R.drawable.johnnysinsblancket, R.drawable.kekw, R.drawable.mcmahon, R.drawable.montebrille, R.drawable.re};
+    private final int[] images = {R.drawable.p,R.drawable.f,R.drawable.e,R.drawable.e,R.drawable.e,R.drawable.e,R.drawable.e};
     int i = 1;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         //--------home------- //
         username_home = findViewById(R.id.textUsername1);
-
+        username_home.setText(nickname);
         profile = findViewById(R.id.profile);
         settings = findViewById(R.id.setting);
         home = findViewById(R.id.home);
@@ -128,8 +126,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void s() {
         recyclerView = findViewById(R.id.eventRecycler);
-        s1 = getResources().getStringArray(R.array.letters);
-        s2 = getResources().getStringArray(R.array.description);
+        s1 = getResources().getStringArray(R.array.events);
+        s2 = getResources().getStringArray(R.array.dates);
         MyAdapter ma = new MyAdapter(this, s1, s2, images);
         recyclerView.setAdapter(ma);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

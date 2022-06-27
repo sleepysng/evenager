@@ -52,7 +52,7 @@
                 android:fontFamily="sans-serif-light"
                 android:text="Hallo"
                 android:textColor="#FFFFFF"
-                android:textSize="26dp"
+                android:textSize="26sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,6 +70,7 @@
                 android:id="@+id/eventList"
                 android:layout_width="411dp"
                 android:layout_height="625dp"
+                android:backgroundTint="#26304C"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -78,30 +79,36 @@
                 app:layout_constraintVertical_bias="0.88">
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/eventRecycler"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#26304C" />
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/eventRecycler"
+                        android:layout_width="394dp"
+                        android:layout_height="504dp"
+                        android:background="#26304C"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/textUsername1"
-                android:layout_width="121dp"
-                android:layout_height="48dp"
-                android:text="Ruphyyy
-"
+                android:layout_width="111dp"
+                android:layout_height="35dp"
+                android:text="strName"
                 android:textAlignment="viewStart"
                 android:textColor="#ffffff"
-                android:textSize="29dp"
+                android:textSize="26sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.080"
+                app:layout_constraintHorizontal_bias="0.031"
                 app:layout_constraintStart_toEndOf="@+id/home_text"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.035" />
+                app:layout_constraintVertical_bias="0.038" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -252,9 +259,13 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/setting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

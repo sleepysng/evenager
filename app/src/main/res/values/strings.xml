@@ -45,6 +45,28 @@
         <item>Spanisch</item>
     </string-array>
 
-
+    <string-array name="events">
+        <item>DayNNight</item>
+        <item>Rutenfest</item>
+        <item>Gamescom</item>
+        <item>Gamescom</item>
+        <item>Rutenfest</item>
+        <item>Gamescom</item>
+        <item>Gamescom</item>
+    </string-array>
+    <string-array name="dates">
+        <item>04.05.2022</item>
+        <item>22.07.2022</item>
+        <item>24.08.2022</item>
+        <item>24.08.2022</item>
+        <item>22.07.2022</item>
+        <item>24.08.2022</item>
+        <item>24.08.2022</item>
+    </string-array>
+    <string-array name="eventkind">
+        <item>Party</item>
+        <item>Festival</item>
+        <item>Event</item>
+    </string-array>
 
 </resources>
