@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private final String URL = "http://95.156.227.28/login/register.php";
+    private final String URL = "https://eventager.de/login/register.php";
     private EditText username, password, email, fullname, birthday, passwordconfirm;
     private String pUsername, pPassword, pEmail, pFullname, pBirthday, pPasswordconfirm;
     private Button registerbtn, loginbtn;
@@ -65,46 +65,56 @@ public class RegisterActivity extends AppCompatActivity {
         pFullname = fullname.getText().toString().trim();
         pUsername = username.getText().toString().trim();
         pBirthday = birthday.getText().toString().trim();
+
+        String tag = pBirthday.substring(0, 2);
+        String monat = pBirthday.substring(3, 5);
+        String jahr = pBirthday.substring(6, 10);
+
+        pBirthday = jahr + "-" + monat + "-" + tag;
         pEmail = email.getText().toString().trim();
 
         // TODO: Keine Sonderzeichen im Usernamen ("!%&$äöü*")!
-
-        if (!(pFullname.equals("") || pPassword.equals("") || pEmail.equals("") || pUsername.equals("") || pBirthday.equals("") || pPasswordconfirm.equals(""))) {
-            if (!pPassword.equals(pPasswordconfirm)) {
-                Toast.makeText(this, "Password not matching", Toast.LENGTH_SHORT).show();
-            } else {
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        response = response.trim();
-                        if (response.equals("success")) {
-                            forwardMain();
-                        } else if (response.equals("failure")) {
-                            Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+        if (!(pBirthday.length() == 10)) {
+            if (!(pFullname.equals("") || pPassword.equals("") || pEmail.equals("") || pUsername.equals("") || pBirthday.equals("") || pPasswordconfirm.equals(""))) {
+                if (!pPassword.equals(pPasswordconfirm)) {
+                    Toast.makeText(this, "Password not matching", Toast.LENGTH_SHORT).show();
+                } else {
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            response = response.trim();
+                            if (response.equals("success")) {
+                                forwardMain();
+                            } else if (response.equals("failure")) {
+                                System.out.println(response + " AMK");
+                                Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String, String> data = new HashMap<>();
-                        data.put("fullname", pFullname);
-                        data.put("email", pEmail);
-                        data.put("username", pUsername);
-                        data.put("password", pPassword);
-                        data.put("birthday", pBirthday);
-                        return data;
-                    }
-                };
-                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-                requestQueue.add(stringRequest);
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                        }
+                    }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String, String> data = new HashMap<>();
+                            data.put("fullname", pFullname);
+                            data.put("email", pEmail);
+                            data.put("username", pUsername);
+                            data.put("password", pPassword);
+                            data.put("birthday", pBirthday);
+                            return data;
+                        }
+                    };
+                    RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                    requestQueue.add(stringRequest);
+                }
+            } else {
+                Toast.makeText(this, "Fields are empty!", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(this, "Fields are empty!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Geburtsdatum hat ein falsches Format!", Toast.LENGTH_SHORT).show();
         }
     }
 

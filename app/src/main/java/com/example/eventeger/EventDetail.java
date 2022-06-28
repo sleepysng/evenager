@@ -47,7 +47,6 @@ public class EventDetail extends AppCompatActivity {
     private void setData() {
         title.setText(s1);
         description.setText(s2);
-        mainImageView.setImageResource(myImage);
     }
 
 }

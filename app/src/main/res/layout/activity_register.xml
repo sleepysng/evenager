@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/register"
         android:textColor="@color/white"
@@ -25,17 +26,18 @@
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
 
+        android:autofillHints="username"
         android:drawableLeft="@drawable/ic_profile"
         android:drawablePadding="20dp"
-        android:inputType="textPersonName"
         android:hint="Benutzername"
+        android:inputType="textPersonName"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/register"
-        android:autofillHints="username" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/email"
@@ -79,7 +81,7 @@
 
         android:drawableLeft="@drawable/ic_cake"
         android:drawablePadding="20dp"
-        android:hint="Geburtstag"
+        android:hint="Geburtstag (DD.MM.JJJJ)"
         android:inputType="date"
         android:padding="20dp"
         android:textColor="@color/white"
@@ -124,11 +126,12 @@
         android:id="@+id/logintxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:text="Du hast schon \n einen Account?"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerbtn" />
 
@@ -136,9 +139,10 @@
         android:id="@+id/registerbtn"
         android:layout_width="200dp"
         android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:text="Registrieren"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordconfirm"
         tools:ignore="DuplicateSpeakableTextCheck" />
@@ -147,14 +151,12 @@
         android:id="@+id/loginbtn"
         android:layout_width="167dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="30dp"
         android:text="Einloggen"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logintxt"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/logintxt"
+        app:layout_constraintTop_toBottomOf="@+id/registerbtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

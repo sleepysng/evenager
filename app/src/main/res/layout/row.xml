@@ -19,6 +19,18 @@
 
 
         <ImageView
+            android:id="@+id/markedAsFavourite"
+            android:layout_width="74dp"
+            android:layout_height="57dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            app:srcCompat="@drawable/ic_star_line" />
+
+        <ImageView
             android:id="@+id/eventKind"
             android:layout_width="57dp"
             android:layout_height="59dp"

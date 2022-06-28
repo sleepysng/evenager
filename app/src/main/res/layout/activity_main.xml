@@ -68,8 +68,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/eventList"
-                android:layout_width="411dp"
-                android:layout_height="625dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:backgroundTint="#26304C"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -85,8 +85,10 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/eventRecycler"
-                        android:layout_width="394dp"
-                        android:layout_height="504dp"
+                        android:layout_width="386dp"
+                        android:layout_height="552dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
                         android:background="#26304C"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -96,8 +98,8 @@
 
             <TextView
                 android:id="@+id/textUsername1"
-                android:layout_width="111dp"
-                android:layout_height="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="strName"
                 android:textAlignment="viewStart"
                 android:textColor="#ffffff"

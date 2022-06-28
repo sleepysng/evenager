@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     private String nickname = LoginActivity.nickname;
     private ImageView imageViewUser;
 
-
     String url = "https://eventager.de/userdata/view.php";
 
     RecyclerView recyclerView;
@@ -58,10 +57,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         //--------home------- //
         username_home = findViewById(R.id.textUsername1);
-        username_home.setText(nickname);
+        username_home.setText(nickname+ ",");
         profile = findViewById(R.id.profile);
         settings = findViewById(R.id.setting);
         home = findViewById(R.id.home);
