@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Eventeger</string>
+    <string name="app_name">Eventager</string>
 
     <string-array name="letters">
         <item>Kantine</item>
