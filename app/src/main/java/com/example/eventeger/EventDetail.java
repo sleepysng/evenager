@@ -3,8 +3,11 @@ package com.example.eventeger;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +16,7 @@ public class EventDetail extends AppCompatActivity {
 
     ImageView mainImageView;
     TextView title, description;
+    Button eventCancel;
     String s1, s2;
     int myImage;
 
@@ -26,9 +30,18 @@ public class EventDetail extends AppCompatActivity {
         mainImageView = findViewById(R.id.eventKind);
         title = findViewById(R.id.eventTopic);
         description = findViewById(R.id.eventDescp);
+        eventCancel = findViewById(R.id.backButton);
 
-        getData();
-        setData();
+        eventCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(EventDetail.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //getData();
+        //setData();
     }
 
     private void getData() {

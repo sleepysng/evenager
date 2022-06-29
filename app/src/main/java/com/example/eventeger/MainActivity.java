@@ -1,58 +1,50 @@
 package com.example.eventeger;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-
-import com.android.volley.RequestQueue;
-
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-
-import org.json.JSONException;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView profile, settings, home, eventliste, evendetails;
+    CardView settings, home, eventliste;
     BottomNavigationView navi;
     TextView username_home, username_pr;
 
     TextView username, fullname, email, birthday;
     private String nickname = LoginActivity.nickname;
     private ImageView imageViewUser;
+    Button deleteAccount;
 
-    String url = "https://eventager.de/login/getdata.php";
+    String url = "https://eventager.de/login/";
 
     RecyclerView recyclerView;
     String s1[], s2[];
-    private final int[] images = {R.drawable.p,R.drawable.f,R.drawable.e,R.drawable.e,R.drawable.e,R.drawable.e,R.drawable.e};
+    private final int[] images = {R.drawable.p,R.drawable.f,R.drawable.e,R.drawable.f,R.drawable.e,R.drawable.p,R.drawable.p};
     int i = 1;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         //--------home------- //
         username_home = findViewById(R.id.textUsername1);
         username_home.setText(nickname+ ",");
-        profile = findViewById(R.id.profile);
         settings = findViewById(R.id.setting);
         home = findViewById(R.id.home);
         // evendetails = findViewById(R.id.eventDetail);
@@ -79,6 +70,54 @@ public class MainActivity extends AppCompatActivity {
         fullname = findViewById(R.id.textFullname);
         imageViewUser = findViewById(R.id.profilepicture);
         //--------profil------- //
+
+        deleteAccount = findViewById(R.id.deleteAccount1);
+        deleteAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "deleteAccount.php",
+                                        new Response.Listener<String>() {
+                                            @Override
+                                            public void onResponse(String response) {
+                                                Toast.makeText(MainActivity.this, response.trim(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        },
+                                        new Response.ErrorListener() {
+                                            @Override
+                                            public void onErrorResponse(VolleyError volleyError) {
+                                                Toast.makeText(MainActivity.this, volleyError.toString(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        }) {
+
+                                    protected Map<String, String> getParams() throws AuthFailureError {
+
+                                        Map<String, String> params = new HashMap<>();
+                                        params.put("username", nickname);
+                                        return params;
+                                    }
+
+                                };
+                                RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+                                requestQueue.add(stringRequest);
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //No button clicked
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("Bist du dir wirklich sicher, dass du deinen Account unwiderruflich löschen möchtest?").setPositiveButton("Ja", dialogClickListener)
+                        .setNegativeButton("Abbrechen", dialogClickListener).show();
+            }
+        });
 
         Spinner spinner = (Spinner) findViewById(R.id.languageSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -103,8 +142,6 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_main:
                             home.setVisibility(View.VISIBLE);
                             eventliste.setVisibility(View.VISIBLE);
-
-                            profile.setVisibility(View.INVISIBLE);
                             settings.setVisibility(View.INVISIBLE);
 
                             s();
@@ -112,23 +149,10 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.nav_setting:
                             home.setVisibility(View.GONE);
-
                             eventliste.setVisibility(View.GONE);
-                            profile.setVisibility(View.GONE);
                             settings.setVisibility(View.VISIBLE);
 
                             break;
-                        case R.id.nav_profile:
-                            home.setVisibility(View.GONE);
-
-                            eventliste.setVisibility(View.GONE);
-                            profile.setVisibility(View.VISIBLE);
-                            settings.setVisibility(View.GONE);
-                            user();
-
-
-                            break;
-
                     }
                     return false;
                 });
@@ -147,7 +171,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void a() {
         home.setVisibility(View.VISIBLE);
-        profile.setVisibility(View.GONE);
         eventliste.setVisibility(View.VISIBLE);
         settings.setVisibility(View.GONE);
         s();
@@ -156,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void user() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url + "getdata.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -181,28 +204,6 @@ public class MainActivity extends AppCompatActivity {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
         requestQueue.add(stringRequest);
-
-   /*   private void showJSON(String response) {
-        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
-        try {
-            JSONObject jsonObject = new JSONObject(response);
-            JSONArray result = jsonObject.getJSONArray(Config5.JSON_ARRAY);
-
-            for (int i = 0; i < result.length(); i++) {
-                JSONObject jo = result.getJSONObject(i);
-                String fullname1 = jo.getString(Config5.KEY_FULLNAME);
-                String birth1 = jo.getString(Config5.KEY_BIRTH);
-                String mail1 = jo.getString(Config5.KEY_MAIL);
-
-            }
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-
-        }
-
-*/
 
     }
 }

@@ -25,12 +25,13 @@
         <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/drawable/ic_star_line.xml" value="0.1965" />
         <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/drawable/selector.xml" value="0.274" />
         <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/drawable/spinner_item.xml" value="0.274" />
-        <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/activity_event_detail.xml" value="0.33" />
+        <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/activity_event_detail.xml" value="0.5" />
         <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/activity_main.xml" value="0.21688400823610157" />
+        <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/activity_register.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/activity_splash.xml" value="0.33" />
         <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/layout/row.xml" value="0.2935185185185185" />
+        <entry key="..\:/Users/ruphyy/StudioProjects/evenager/app/src/main/res/menu/menu_nav.xml" value="0.26927083333333335" />
       </map>
     </option>
   </component>

@@ -134,115 +134,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="411dp"
             android:layout_height="789dp"
-            android:background="#26304C">
-
-            <TextView
-                android:id="@+id/settings_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="28dp"
-                android:fontFamily="sans-serif-light"
-                android:text="Profil"
-                android:textColor="#FFFFFF"
-                android:textSize="26dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <View
-                android:id="@+id/firtTopicView"
-                android:layout_width="4dp"
-                android:layout_height="33dp"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="28dp"
-                android:background="@drawable/cornerviews"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/changePassword"
-                android:layout_width="175dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="32dp"
-                android:text="Passwort ändern"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textMail" />
-
-            <ImageView
-                android:id="@+id/profilepicture"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="44dp"
-                android:contentDescription="Picture"
-                android:src="@drawable/profile_example"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.917"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
-
-            <TextView
-                android:id="@+id/textFullname"
-                android:layout_width="245dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="56dp"
-                android:gravity="center"
-                android:text="Fullname"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.481"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profilepicture" />
-
-            <TextView
-                android:id="@+id/textUsername"
-                android:layout_width="190dp"
-                android:layout_height="32dp"
-                android:gravity="center"
-                android:text="Username"
-                android:textColor="#ffffff"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:drawableLeftCompat="@drawable/ic_person"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.434"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textFullname" />
-
-            <TextView
-                android:id="@+id/textMail"
-                android:layout_width="190dp"
-                android:layout_height="32dp"
-                android:gravity="center"
-                android:text="E-Mail"
-                android:textColor="#ffffff"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:drawableLeftCompat="@drawable/ic_email"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.434"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
-
-            <TextView
-                android:id="@+id/textBirthday"
-                android:layout_width="190dp"
-                android:layout_height="32dp"
-                android:gravity="center"
-                android:text="Geburtstag"
-                android:textColor="#ffffff"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:drawableLeftCompat="@drawable/ic_cake"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.434"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textUsername" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="#26304C" />
 
     </androidx.cardview.widget.CardView>
     //profile-----------------------profile//
@@ -254,7 +146,6 @@
         android:id="@+id/setting"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -264,6 +155,123 @@
             android:layout_width="match_parent"
             android:layout_height="740dp"
             android:background="#26304C">
+
+            <TextView
+                android:id="@+id/settings_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="324dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Profil"
+                android:textColor="#FFFFFF"
+                android:textSize="26dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/firtTopicView"
+                android:layout_width="4dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="324dp"
+                android:background="@drawable/cornerviews"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/changePassword"
+                android:layout_width="170dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#2D88EC"
+                android:text="Passwort ändern"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.172"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textMail" />
+
+            <Button
+                android:id="@+id/deleteAccount1"
+                android:layout_width="131dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="#EC5353"
+                android:text="Account löschen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.871"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textMail" />
+
+            <ImageView
+                android:id="@+id/profilepicture"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="320dp"
+                android:contentDescription="Picture"
+                android:src="@drawable/profile_example"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.858"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+            <TextView
+                android:id="@+id/textFullname"
+                android:layout_width="190dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="28dp"
+                android:text="André C."
+                android:textAlignment="viewStart"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.185"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settings_text" />
+
+            <TextView
+                android:id="@+id/textUsername"
+                android:layout_width="190dp"
+                android:layout_height="32dp"
+                android:text="ruphyy"
+                android:textAlignment="viewStart"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.185"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textFullname" />
+
+            <TextView
+                android:id="@+id/textMail"
+                android:layout_width="190dp"
+                android:layout_height="32dp"
+                android:text="admin@ruphyy.de"
+                android:textAlignment="viewStart"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.185"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
+
+            <TextView
+                android:id="@+id/textBirthday"
+                android:layout_width="190dp"
+                android:layout_height="32dp"
+                android:text="24.05.2003"
+                android:textAlignment="viewStart"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.185"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textUsername" />
 
             <View
                 android:id="@+id/firtTopicView4"
@@ -346,15 +354,16 @@
 
             <Button
                 android:id="@+id/swtDarkmode"
-                android:layout_width="191dp"
-                android:layout_height="54dp"
+                android:layout_width="195dp"
+                android:layout_height="64dp"
                 android:layout_marginStart="101dp"
                 android:layout_marginEnd="101dp"
-                android:layout_marginBottom="310dp"
+                android:layout_marginBottom="452dp"
                 android:backgroundTint="#2D313D"
                 android:text="Zum Darkmode wechseln"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
 

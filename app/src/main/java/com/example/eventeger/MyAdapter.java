@@ -1,8 +1,6 @@
 package com.example.eventeger;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +11,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.eventeger.EventDetail;
-import com.example.eventeger.R;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
@@ -48,6 +43,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.myText2.setText(s2[position]);
         holder.myImage.setImageResource(images[position]);
 
+        holder.markedAsFavourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("TEST");
+                    holder.notMarkedAsFavourite.setVisibility(View.GONE);
+                    holder.markedAsFavourite.setVisibility(View.VISIBLE);
+            }
+        });
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,14 +69,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView myText1, myText2;
-        ImageView myImage;
-        ImageButton editEvent, deleteEvent;
+        ImageView myImage, markedAsFavourite, notMarkedAsFavourite;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             myText1 = itemView.findViewById(R.id.eventTopic);
             myText2 = itemView.findViewById(R.id.eventDate);
             myImage = itemView.findViewById(R.id.eventKind);
+            markedAsFavourite = itemView.findViewById(R.id.notMarkedAsFavourite);
+            markedAsFavourite.setVisibility(View.VISIBLE);
+            notMarkedAsFavourite = itemView.findViewById(R.id.markedAsFavourite);
+            notMarkedAsFavourite.setVisibility(View.GONE);
+
 
         }
     }
