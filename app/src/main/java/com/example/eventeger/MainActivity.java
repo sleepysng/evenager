@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private String nickname = LoginActivity.nickname;
     private ImageView imageViewUser;
 
-    String url = "https://eventager.de/userdata/view.php";
+    String url = "https://eventager.de/login/getdata.php";
 
     RecyclerView recyclerView;
     String s1[], s2[];
@@ -77,6 +79,18 @@ public class MainActivity extends AppCompatActivity {
         fullname = findViewById(R.id.textFullname);
         imageViewUser = findViewById(R.id.profilepicture);
         //--------profil------- //
+
+        Spinner spinner = (Spinner) findViewById(R.id.languageSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.languages_array, R.layout.spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        Spinner spinner1 = (Spinner) findViewById(R.id.locationSpinner);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
+                this, R.array.locations_array, R.layout.spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter1);
 
 
         if (i == 1) {
@@ -168,11 +182,6 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
         requestQueue.add(stringRequest);
 
-
-
-
-
-
    /*   private void showJSON(String response) {
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         try {
@@ -184,9 +193,6 @@ public class MainActivity extends AppCompatActivity {
                 String fullname1 = jo.getString(Config5.KEY_FULLNAME);
                 String birth1 = jo.getString(Config5.KEY_BIRTH);
                 String mail1 = jo.getString(Config5.KEY_MAIL);
-
-
-
 
             }
 
